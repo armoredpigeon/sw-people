@@ -11,9 +11,10 @@ const css = `
 `;
 
 export const PersonList = (props) => {
+    const scoped = useCss(css);
     const { personList, pageNumber } = props;
     return (
-        <ul className="person-list">
+        <ul className="person-list" {...scoped}>
             {personList.map((person) => {
                 let propsToPass = {
                     characterName : person.name,
