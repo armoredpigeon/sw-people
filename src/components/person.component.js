@@ -27,7 +27,7 @@ const css = `
 
 export const Person = (props) => {
     const scoped = useCss(css);
-    const { characterName, characterBirthday, planetName } = props;
+    const { characterName, characterBirthday, planetName, id } = props;
     return (
         <div className="character-info" {...scoped}>
             <span className="character-name">{characterName}</span>

@@ -1,7 +1,14 @@
 import React from 'react';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+import { HomePage } from './components/home/home-page.component';
+import { initializePeopleList } from './repos/person-list.repo';
 
-function App() {
+class App extends React.Component{
   //todo: get the list of people, store it in memory -- have a sortValue (default 0) and an isFavorite as part of the objects
   //todo: get the list of planets for the sake of the planet names, store it as well
   //todo: make a "sorted character list" page kind of thing for favorites.
@@ -13,11 +20,25 @@ function App() {
   //todo: have a favoritesListService that'll behave like a db for holding the favorited characters(?)
   //todo: -- might not need that if I implement the isFavorite on the characters stored in the characterGetterService
   //todo: -- -- remember to use .filter((item) => item.isFavorite === true) to get the favorites, kind of thing.
-  return (
-    <div className="App">
-      Ook.
-    </div>
-  );
+  componentDidMount(){
+    initializePeopleList();
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          Ook. Ook. ...
+        </div>
+
+        <Switch>
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
