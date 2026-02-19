@@ -9,7 +9,7 @@
     "kremling": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-router": "^7.5.2",
+    "react-router": "^7.12.0",
     "react-router-dom": "^7.5.2",
     "react-scripts": "5.0.1"
   },
